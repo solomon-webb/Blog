@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Blog By KingSOL @SoloVibe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
   <div class="login-container"  id="Login" >
     <div class="logo">
           <img src="download (1).png" alt="logo" style="width: 100px;height: 100px;">
       <h1>SoloVibe Blog</h1>
     </div>
    
-<form action="#" onsubmit="return loginUser()">
+<form action="#" onsubmit="return checkPsw()">
+    <header style="text-align: center;">Forgotten Password</header>
     <div class="input_Section">
     <input type="text" name="username" id="login_Username" class="input_field" required> 
     <label for="username" class="label">Enter Your Username</label>
     <p class="error" id="username_error"></p>
     </div>
-   <div class="input_Section">
-    <input type="password" name="password" id="Login_psw" class="input_field" required> 
-    <label for="psw" class="label">Enter Your Password</label>
-      <p class="error" id="psw_error"></p>
-    </div>
-    <div class="psw_check">
-          <input type="checkbox" name="" id="psw_check" onclick="showLogin_psw()">
-          <label for="psw_check">Show password</label>
-    </div>
+   
     <div class="buttom">
-        <input type="submit" value="Login" class="btn">
+        <input type="submit" value="Submit" class="btn">
     </div>
-    <div class="forget_psw">
-        <p><a href="Forgotten_psw.html">Forgotten Password?</a></p>
-    </div>
-
+    
+<p id="showPsw" style="color: red;text-align: center;font-size: 1.4em;"></p>
    
 </form>
- 
-<div class="createAccount">
+ <div class="createAccount">
         <div class="cont">
-        <button class="create_btn" onclick="reg_page()">Create a new account</button>
+        <button class="create_btn" onclick="login_page()">Login</button>
         <span>SoloVibe</span>
         </div>
     </div>
 
+
     </div>
     
-  <script src="script.js"></script>
+   <script>
+    
+   </script>
+
+    <script src="script.js"></script>
 </body>
 </html>

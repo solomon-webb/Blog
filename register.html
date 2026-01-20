@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog By KingSOL @SoloVibe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!--REgister-->
+    <div class="Reg-container" id="Register">
+    <div class="logo">
+          <img src="download (1).png" alt="logo" style="width: 100px;height: 100px;">
+      <h1>Welcome to SoloVibe Blog</h1>
+    </div>
+   
+<form action="" onsubmit="return Register()">
+    <div class="input_Section">
+    <input type="text" name="username" id="Reg_username" class="input_field" required> 
+    <label for="username" class="label">Enter Your Username</label>
+    <p class="error" id="Reg_username_Error"></p>
+    </div>
+    <div class="input_Section">
+    <input type="text" name="mail" id="Reg_mail" class="input_field" required> 
+    <label for="mail" class="label">Enter Your Email</label>
+     <p class="error" id="Reg_mail_error"></p>
+    </div>
+   <div class="input_Section">
+    <input type="password" name="password" id="Reg_psw" class="input_field" required> 
+    <label for="psw" class="label">Enter Your Password</label>
+     <p class="error" id="Reg_psw_error"></p>
+    </div>
+     <div class="psw_check">
+          <input type="checkbox" name="" id="psw_check" onclick="showReg_psw()">
+          <label for="psw_check">Show password</label>
+    </div>
+    <div class="buttom">
+        <input type="submit" value="Register" class="btn">
+    </div>
+  
+
+   
+</form>
+<div class="createAccount">
+        <div class="cont">
+        <button class="create_btn" onclick="login_page()">Login</button>
+        <span>SoloVibe</span>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

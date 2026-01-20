@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                         
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+.nav .logo {
+    font-size: 2em;
+    color: blue;
+    font-weight: bold;
+}
+.dashboard {
+    margin-top: 70px;
+    display: flex;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section .name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.profilepic {
+    display: flex;
+    justify-content: center;
+}
+
+.profilepic i, .profilepic img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profilepic i:hover, .profilepic img:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-menu, .categories {
+    margin-bottom: 25px;
+}
+
+.sidebar-menu h3, .categories h3 {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-menu ul, .categories ul {
+    list-style: none;
+}
+
+.sidebar-menu li, .categories li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a, .categories a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a i, .categories a i {
+    margin-right: 10px;
+    width: 18px;
+}
+
+.sidebar-menu a:hover, .categories a:hover {
+    background-color: #f0f0f0;
+    color: blue;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.content-header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.btn-new-post {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: transform 0.3s ease;
+}
+
+.btn-new-post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-new-post i {
+    margin-right: 8px;
+}
+
+/* Posts Container */
+.posts-container {
+    display: grid;
+    gap: 20px;
+}
+
+.post-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.post-header h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.post-date {
+    color: #999;
+    font-size: 0.9em;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.post-date i {
+    margin-right: 5px;
+}
+
+.post-category {
+    margin-bottom: 12px;
+}
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+}
+
+.post-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.read-more {
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #667eea;
+}
+
+.post-stats {
+    display: flex;
+    gap: 15px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.post-stats i {
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content-header h1 {
+        font-size: 1.5em;
+    }
+
+    .btn-new-post {
+        width: 100%;
+    }
+}
+
+
+
+
+
+// ...existing code...
+   <style>
+    .error {
+        color: red;
+        font-size: smaller;
+    }
+
+    /* Responsive Add Post modal */
+    .PostWrapper {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1000;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .postModal {
+      width: 100%;
+      max-width: 760px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      overflow: auto;
+      max-height: 90vh;
+      box-sizing: border-box;
+    }
+
+    .modalContent {
+      padding: 18px;
+      box-sizing: border-box;
+    }
+
+    .modalContent .close {
+      float: right;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .form_group {
+      padding: 12px 18px;
+      box-sizing: border-box;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .input_field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea.input_field {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .imagePreview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagePreview img {
+      max-width: 150px;
+      max-height: 150px;
+      margin-top: 10px;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn {
+      background: #7353AD;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .postModal {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 8px;
+      }
+      .modalContent {
+        padding: 12px;
+      }
+      .input_field {
+        font-size: 15px;
+        padding: 9px;
+      }
+      .imagePreview img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+      .modalContent h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-height: 480px) {
+      .postModal {
+        max-height: 95vh;
+      }
+      .modalContent {
+        padding: 10px;
+      }
+    }
+   </style>
+// ...existing code...
+```// filepath: c:\Users\OWNER\Desktop\my projects\Blog\main.html
+// ...existing code...
+   <style>
+    .error {
+        color: red;
+        font-size: smaller;
+    }
+
+    /* Responsive Add Post modal */
+    .PostWrapper {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1000;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .postModal {
+      width: 100%;
+      max-width: 760px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      overflow: auto;
+      max-height: 90vh;
+      box-sizing: border-box;
+    }
+
+    .modalContent {
+      padding: 18px;
+      box-sizing: border-box;
+    }
+
+    .modalContent .close {
+      float: right;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .form_group {
+      padding: 12px 18px;
+      box-sizing: border-box;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .input_field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea.input_field {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .imagePreview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .imagePreview img {
+      max-width: 150px;
+      max-height: 150px;
+      margin-top: 10px;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn {
+      background: #7353AD;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .postModal {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 8px;
+      }
+      .modalContent {
+        padding: 12px;
+      }
+      .input_field {
+        font-size: 15px;
+        padding: 9px;
+      }
+      .imagePreview img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+      .modalContent h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-height: 480px) {
+      .postModal {
+        max-height: 95vh;
+      }
+      .modalContent {
+        padding: 10px;
+      }
+    }
+   </style>
+// ...existing code...
+
+
+
+
+
+
+
+
+
+.dark-mode .nav {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .sidebar {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .post-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .content-header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .sidebar-menu a:hover,
+.dark-mode .categories a:hover {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .btn-submit,
+.dark-mode .btn-new-post {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #ffffff;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group select:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.dark-mode .post-card:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.dark-mode .badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode .read-more:hover {
+    color: #667eea;
+}
+
+.dark-mode .no-posts {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .comment-item {
+    border-bottom: 1px solid #333;
+    color: #ffffff;
+}
+
+.dark-mode .comment-item strong {
+    color: #667eea;
+}
+
+.dark-mode .stat-btn:hover {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .stat-btn.liked {
+    color: #ff6b6b;
+}
+
+.dark-mode .stat-btn.liked:hover {
+    background-color: rgba(255, 107, 107, 0.1);
+}

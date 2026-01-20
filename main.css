@@ -1,0 +1,340 @@
+/* Programmed by Solomon; all right reserved. @SoloVibe @copyright*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                         
+}
+body {
+   background-color: #f5f5f5;
+   margin: 0 20px;;
+}
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+.dark-mode .nav {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 5px 8px #fff;
+}
+.dark-mode .sidebar {
+      background-color: #1e1e1e;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+
+}
+
+.nav {
+    position: fixed;
+      width: 100%; 
+     top: 0;
+   left:  0;
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: #fff;
+    padding: 20px 20px;
+   box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+   z-index: 1000;
+}
+
+.logo h1 {
+              color: blue;
+              font-size: 1.5em;
+}
+.menu i, .Darkmode i {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: blue;
+}
+.dashboard {
+    margin-top: 100px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1400px;
+   display: flex;
+   width: 100%;
+   gap: 20px;
+   margin-bottom: 15px;
+}
+.sidebar {
+  background: #fff;
+  width: 280px;
+  height: fit-content;
+  padding: 20px;
+  position: sticky;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+.profileSection {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profileSection .name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.dark-mode .profileSection .name {
+    color: #fff;
+}
+.profilepic img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.profilepic i, .profilepic img{
+    cursor: pointer;
+  transition: 0.5s;
+}
+.profilepic i:hover, .profilepic img:hover {
+   scale: 1.1;
+
+}
+.navigation {
+    margin-top: 20px;
+    color: blue;
+}
+.dark-mode .header h2 {
+    color: #fff;
+}
+.header h2 {
+   
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+/*.header h2::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #bebaba;
+    left: 0; 
+    bottom: -7px;
+}
+    */
+.navigation ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+.dark-mode .navigation ul li a  {
+    color: #fff;
+}
+.navigation ul li a {
+    font-size: 1em;
+    display: block;
+    padding: 20px;
+  
+    text-decoration: none;
+    color: blue;
+}
+.navigation ul li i {
+    padding-right: 10px;
+}
+.mainpost {
+   
+   flex: 1;
+min-width: 0;
+}
+.dark-mode .wrapper {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+.wrapper {
+ background: #fff;
+    box-shadow: 0 1px 3px #000;
+    border-radius: 15px;
+    margin-bottom: 10px;
+     padding: 30px;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+   
+    align-items: center;
+   
+}
+.dark-mode .header h3 {
+    color: #fff;
+}
+.header h3 {
+    font-size: 1.2em;
+    color: blue;
+}
+
+.newPost button, .category button {
+    width: 100px;
+    height: 30px;
+    background: #7353AD;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+   outline: none;
+    cursor: pointer;
+    padding: 5px;
+    
+    font-family: 600;
+}
+.category button {
+   width: 100px;
+   margin-top: 20px;
+   font-size: medium;
+   height: 40px;
+   margin-bottom: 10px;
+}
+.newPost button span {
+    padding-right: 10px;
+}
+.dark-mode .description p {
+    color: #fff;
+}
+.description p {
+    font-size: 1em;
+    color: #333;
+    padding-bottom: 20px;
+}
+.rlm {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    align-items: center;
+}
+.rm p a {
+    color: blue;
+    font-size: 1em;
+    font-weight: 500;
+}
+@media screen and (max-width: 500px) {
+    body {
+        max-width: 100%;
+    }
+    .logo h1 {
+        font-size: 2em;
+    }
+       .dashboard {
+       
+        flex-direction: column;
+      
+       }
+       .sidebar {
+        width: 100%;
+        position: static;
+       }
+       .title {
+        flex-direction: column;
+       }
+       .header h3  {
+        font-size: 1em;
+        margin-bottom: 10px;
+       }
+       .postModal {
+     max-width: 100%;
+     height: fit-content;
+       margin: 10px;
+       margin-top: 200px;
+       }
+       .modalContent h1 {
+  font-size: 1em;
+       }
+        
+       
+}
+.PostWrapper {
+  position: fixed;
+ display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+   overflow: auto;
+   inset: 0;
+      -webkit-overflow-scrolling: touch;
+
+}
+.dark-mode .postModal {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+.postModal {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+max-width: 400px;
+    box-shadow: 0 1px 5px #000;
+    padding: 20px;
+    overflow: hidden;
+}
+.modalContent {
+   text-align: center;
+}
+.dark-mode .modalContent .close {
+    color: #fff;
+}
+.modalContent .close {
+    float: right;
+    font-size: 24px;
+      line-height: 1;
+    cursor: pointer;
+}
+.dark-mode .label {
+    color: #fff;
+}
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.form_group {
+    position: relative;
+    margin: 20px 0;
+}  
+
+.input_field {
+     width: 100%;
+   height: 50px;
+   border-radius: 15px;
+    outline: none;
+    border: 1px solid #ddd;
+    transition: 0.5s;
+    font-size: 1em;
+  padding: 10px;
+    resize: none;
+}
+textarea.input_field {
+    min-height: 90px;
+  resize: none;
+}
+
+.modalContent h1, .POst_title h2 {
+    color: blue;
+}
+.POst_title {
+    display: flex;justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.form_group .btn {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1em;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.5s;
+   cursor: pointer;
+}
+.form_group .btn:active {
+    transform: translateY(8px);
+}
+
+.cm i {
+    
+  color: #7353AD;
+}
