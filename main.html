@@ -199,7 +199,15 @@
 <div class="footer" style="display: flex;justify-content: center;align-items: center;margin: 10px;" >
     <p style="text-align: center;font-size: smaller;">© copyright <span id="year"></span> SoloVibe, All rights reserved. Created By  SOLOMON   </p></p>
 </div>
-  <script src="script.js" defer>
+  <script src="script.js">
+  </script>
+  <script>
+    let proto = document.location.protocol;
+             if(proto === 'file:' || proto === 'http:'  ) {
+                alert("try dey get sense; don't copy my code")
+              window.close()
+
+          }
   </script>
 </body>
 </html>

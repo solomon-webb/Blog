@@ -154,7 +154,6 @@ if(document.getElementById("ProfileNM")) {
     document.getElementsByClassName('all')[0].style.filter = "blur(5px)"
      document.getElementById("form_group").reset()
   }
- 
   function AddPost() {
     let title = document.getElementById("postTitle").value.trim();
     let category = document.getElementById("PostCategory").value;
@@ -394,10 +393,5 @@ function viewPost(PostId){
 
    },   30000  );
    document.getElementById('year').innerHTML = new Date().getFullYear();
-    //  let proto = document.location.protocol;
-    //          if(proto == 'file:'  ) {
-    //             alert("try dey get sense; don't copy my code")
-    //           window.close()
-            
-    //       }
+    
           
