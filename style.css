@@ -1,3 +1,4 @@
+/* Programmed by Solomon; all right reserved. @SoloVibe @copyright*/
 * {
     padding: 0%;
     margin: 0%;
@@ -19,7 +20,6 @@ body {
     padding: 10px;
     position: relative;
     background-color: transparent;
-
 }
 .logo  {
     display: flex;justify-content: center;
@@ -33,11 +33,9 @@ body {
     color: blue;
     margin-bottom: 10px;
 }
-
 .input_Section {
     margin: 15px 0;
     position: relative;
-   
 }
 .input_field {
     width: 100%;
@@ -47,7 +45,6 @@ body {
  border: 1px solid #DDDDDD;
     padding: 20px;
     transition: 0.5s;
-   
     font-size: 1em;
 }
 .label {
@@ -135,7 +132,6 @@ margin-left: 10px;
     background-color: blue;
     color: #fff;
     border: none;
-   
  }
  .create_btn:active {
     transform: translateY(8px);
@@ -151,5 +147,8 @@ margin-left: 10px;
 }
 .Reg-container .logo h1 {
     font-size: 1.3em;
+}
+.logo  h1  {
+    font-size: 16px;
 }
  }

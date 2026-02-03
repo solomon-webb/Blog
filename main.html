@@ -9,6 +9,15 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="description" content="Personal Blog By KingSOL @SoloVibe">
+<meta name="keywords" content="Personal Blog By KingSOL @SoloVibe">
+<link rel="shortcut icon" href="download (1).png" type="image/x-icon">
+<link rel="icon" href="download (1).png">
+<link rel="apple-touch-icon" href="download (1).png">
+<meta name="author" content="Solomon Towolawi">
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
    <style>
     .error {
         color: red;
@@ -17,6 +26,61 @@
    </style>
 </head>
 <body>
+<div class="FeebackWrapper" id="Contact">
+<div class="postModal">
+         <div class="modalContent">
+            <span class="close" onclick="closeContact()">×</span>
+          <h1>Meet the Developer</h1>
+         </div>
+         <div class="POst_title" style="text-align: center;">
+            <h2>SoloVibe</h2>
+         </div>
+         <form action="" id="form_group" >
+              <div class="form_group">
+            <label for="postTitle"  class="label">FullName: Solomon Towolawi</label>
+              </div>
+            <div class="form_group">
+                <label for="POstContent" class="label">Age: 16 to be</label>
+            </div>
+            <div class="form_group">
+                <label for="POstContent" class="label">Role: Developer</label>
+             
+            </div>
+          <div class="form_group" style="display: flex;justify-content: center;align-items: center;">
+              <img src="InShot_20251119_162149511.jpg" alt="" style="width: 300px;height: 300px;border-radius: 20px;">
+             
+            </div>
+            <div class="form_group">
+                <input type="submit" value="Contact Me" class="btn" onclick="Contact()">
+            </div>
+         </form>
+    </div>
+    </div>
+      <div class="FeebackWrapper" id="Feeback">
+<div class="postModal">
+         <div class="modalContent">
+            <span class="close" onclick="closeFeeback()">×</span>
+          <h1>Get in touch </h1>
+         </div>
+         <div class="POst_title" style="text-align: center;">
+            <h2>SoloVibe</h2>
+         </div>
+         <form action="" id="Feebackform" onsubmit="return SendFeedback()" >
+              <div class="form_group">
+            <label for="postTitle"  class="label">Name</label>
+            <input type="text" name="feedbackNAme" id="feedbackNAme" placeholder="Enter Your name"  class="input_field">
+</div>
+            <div class="form_group">
+                <label for="POstContent" class="label">feedback Content</label>
+                <textarea name="" id="feedbackContent"  rows="1" cols="16" class="input_field" placeholder="Enter Your message" required></textarea>
+                <p class="error" id="PostCont_Error"></p>
+            </div>
+            <div class="form_group">
+                <input type="submit" value="Send" class="btn">
+            </div>
+         </form>
+    </div>
+    </div>
     <div class="PostWrapper" id="PostWrapper">
 <div class="postModal">
          <div class="modalContent">
@@ -34,12 +98,14 @@
 </div>
             <div class="form_group">
                 <label for="PostCategory"  class="label" >Category</label>
-                <select name="" id="PostCategory" class="input_field" required>
+                <select name="" id="PostCategory" class="input_field" required style="text-transform: capitalize;">
                       <option value="">Select Category</option>
                         <option value="Technology">Technology</option>
                         <option value="Travel">Travel</option>
                         <option value="Lifestyle">Lifestyle</option>
-                        <option value="Other">Other</option>
+                        <option value="Other">fun</option>
+                          <option value="Other">Business</option>
+                          <option value="Other">other</option>
                 </select>
             </div>
             <div class="form_group">
@@ -47,39 +113,19 @@
                 <textarea name="" id="POstContent"  rows="1" cols="16" class="input_field" placeholder="Enter Your post Content" required></textarea>
                 <p class="error" id="PostCont_Error"></p>
             </div>
-
             <div class="form_group">
                 <label for="postImage">Post Image:</label>
-                <input type="file" name="" id="postImage" accept="image/*" onchange="Preview()">
+                <input type="file" name="" id="postImage" accept="image/*" onchange="Preview()" required>
                 <div class="imagePreview"  style="display: flex;justify-content: center;align-items: center;" >
-                    <img src="" alt="" id="imagePreview" style="max-width: 150px;max-height: 150px; margin-top: 10px;border-radius: 10px;object-fit: cover;display: block;">
+                    <img src="" alt="" id="imagePreview" style="max-width: 110px;max-height: 110px; margin-top: 5px;border-radius: 10px;object-fit: cover;display: block;">
                 </div>
             </div>
-            
             <div class="form_group">
                 <input type="submit" value="Post" class="btn">
             </div>
          </form>
     </div>
     </div>
-
-    <!-- Comment Modal -->
-    <div id="commentModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close" onclick="closeCommentModal()">&times;</span>
-            <h2>Add Comment</h2>
-            <div id="commentDisplay" class="comment-display"></div>
-            <form id="commentForm">
-                <div class="form-group">
-                    <textarea id="commentText" required placeholder="Write your comment here..." rows="4"></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn-submit">Post Comment</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <div class="all">
     <div class="nav">
         <div class="logo">
@@ -92,22 +138,17 @@
         </div>
         --> 
     </div>
-
-    
     <div class="dashboard">
         <div class="sidebar">
             <div class="profileSection">
     <div class="name">Welcome <span id="ProfileNM"></span> </div>
     <div class="profilepic">
-  
-
         <img src=""  alt="profile" id="profileImg" style="width: 100px;height: 100px;border-radius: 50%;object-fit: cover;display: none;" onclick="document.getElementById('fileInput').click()" >
          <i class="fas fa-user-circle" id="profileIcon" style="font-size: 60px;margin-bottom: 15px;"  onclick="document.getElementById('fileInput').click()"></i>
         <input type="file"  id="fileInput" accept="image/*" style="display: none;" onchange="UploadProfilePic()">
        </div>
        <div class="tip">
-         <p id="tip" style="font-size: 10px;color: #7353AD;margin-bottom: 10px;">Click on the icon to upload your profile picture</p>
-        
+         <p id="tip"  style="font-size: 10px;color: #7353AD;margin-bottom: 10px;">Click on the icon to upload your profile picture</p>
        </div>
        </div>
        <hr>
@@ -115,64 +156,50 @@
         <div class="header">
             <h2>Navigation</h2>
         </div>
-        <ul>
+        <ul style="text-transform: capitalize;">
            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                     <li onclick="ShowPost()"><a href="#"><i class="fas fa-edit"></i> Write Post</a></li>
-                    <li><a href="#"><i class="fas fa-bookmark"></i> Saved</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                     <li onclick="ShowFeeback()"><a href="#"><i class="fas fa-bookmark"></i> feedback</a></li>
+                                         <li onclick="LogOUT()" id="showlogOUt" style="display: none;"><a href="#"><i class="fas fa-bookmark"></i> logout</a></li>
+  <li onclick="ShowContact()" id="ShowContact"><a href="#"><i class="fas fa-bookmark"></i> Contact</a></li>
+ <li onclick="alert('Pending');return false"><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+
                </ul>
        </div>
     </div>
      <div class="mainpost">
-        <div class="wrapper">
         <div class="title">
-            <div class="header">
                 <h3>My Blog Posts</h3>
-            </div>
-            <div class="newPost">
                 <button onclick="ShowPost()"> <span>+</span>New Post</button>
-            </div>
-            </div>
         </div>
-
-        <div class="wrapper">
+      
+  </div>
+    <div class="wrapper"  id="postsContainer">
+           <div class="post_card">
+                <div class="post-image" style="display: flex;justify-content: center;align-items: center;margin-bottom: 10px;"><img src="IMG-20251104-WA0004.jpg" alt="" style="border-radius: 15px;width: 200px;height: 200px;"></div> 
         <div class="title">
-            <div class="header">
                 <h3>Welcome to My Blog Posts</h3>
-            </div>
-            <div class="newPost">
-                <i class="fas fa-calendar" style="color: #7353AD;"></i>   <span id="Date"></span>
-            
-            </div>
+               <i class="fas fa-calendar" style="color: #7353AD;"><span id="MYOwnDate" style="padding-left: 15px; font-size: smaller;"></span></i>  
             </div>
               <div class="category">
                 <button>Technology</button>
             </div>
             <div class="description">
-                <p>This is just the beginning of my blogging journey, I will be sharing m experiences and insights on various topics</p>
+                <p>My name is Solomon @SoloVibe, is just the beginning of my blogging journey, I will be sharing m experiences and insights on various topics</p>
             </div> 
             <hr>
             <div class="rlm">
-                <div class="rm">
-                <p> <a href="#">Read More</a></p>
-                </div>
                 <div class="cm">
-                    <span><i class="fas fa-eye"></i> 0</span>
-                            <span><i class="fas fa-heart"></i> 0</span>
-                            <span><i class="fas fa-comment"></i> 0</span>
-                        
-                </div>
+                    <span><i class="fas fa-eye"></i>1</span>
+                                       </div>
             </div>
+           </div>
         </div>
-    </div>
-
-    
-  </div>
 </div>
-  <script src="script.js">
+<div class="footer" style="display: flex;justify-content: center;align-items: center;margin: 10px;" >
+    <p style="text-align: center;font-size: smaller;">© copyright <span id="year"></span> SoloVibe, All rights reserved. Created By  SOLOMON   </p></p>
+</div>
+  <script src="script.js" defer>
   </script>
-
-
-  
 </body>
 </html>

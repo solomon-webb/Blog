@@ -3,8 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                         
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;                                 
 }
 body {
    background-color: #f5f5f5;
@@ -13,6 +12,7 @@ body {
 .dark-mode {
     background-color: #000;
     color: #fff;
+   
 }
 .dark-mode .nav {
     background: #000;
@@ -22,9 +22,7 @@ body {
 .dark-mode .sidebar {
       background-color: #1e1e1e;
     box-shadow: 0 1px 8px rgba(0,0,0,0.3);
-
 }
-
 .nav {
     position: fixed;
       width: 100%; 
@@ -38,10 +36,15 @@ background-color: #fff;
    box-shadow: 0 5px 8px rgba(0,0,0,0.1);
    z-index: 1000;
 }
-
 .logo h1 {
               color: blue;
               font-size: 1.5em;
+}
+.dark-mode .logo h1 {
+    color: #fff;
+}
+.dark-mode .Darkmode i{
+  color: #fff;
 }
 .menu i, .Darkmode i {
     font-size: 1.5em;
@@ -68,7 +71,6 @@ background-color: #fff;
   border-radius: 20px;
 }
 .profileSection {
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +94,6 @@ background-color: #fff;
 }
 .profilepic i:hover, .profilepic img:hover {
    scale: 1.1;
-
 }
 .navigation {
     margin-top: 20px;
@@ -102,7 +103,6 @@ background-color: #fff;
     color: #fff;
 }
 .header h2 {
-   
     position: relative;
     display: block;
     margin-bottom: 10px;
@@ -129,20 +129,27 @@ background-color: #fff;
     font-size: 1em;
     display: block;
     padding: 20px;
-  
+  transition: 0.8s;
     text-decoration: none;
     color: blue;
+}
+.navigation ul li a:hover {
+    transform: scale(1.1);
 }
 .navigation ul li i {
     padding-right: 10px;
 }
 .mainpost {
-   
    flex: 1;
 min-width: 0;
 }
 .dark-mode .wrapper {
     background-color: #1e1e1e;
+    color: #fff;
+}
+.dark-mode .title {
+      background-color: #1e1e1e;
+      box-shadow: 0 0 10px #fff;
     color: #fff;
 }
 .wrapper {
@@ -151,13 +158,20 @@ min-width: 0;
     border-radius: 15px;
     margin-bottom: 10px;
      padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
 }
 .title {
-    display: flex;
+   display: flex;
     justify-content: space-between;
-   
     align-items: center;
-   
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .dark-mode .header h3 {
     color: #fff;
@@ -166,8 +180,7 @@ min-width: 0;
     font-size: 1.2em;
     color: blue;
 }
-
-.newPost button, .category button {
+.title button, .category button {
     width: 100px;
     height: 30px;
     background: #7353AD;
@@ -177,8 +190,11 @@ min-width: 0;
    outline: none;
     cursor: pointer;
     padding: 5px;
-    
+     transition: 0.8s;
     font-family: 600;
+}
+.title button:active, .category button:active {
+    transform: translateY(8px);
 }
 .category button {
    width: 100px;
@@ -197,12 +213,14 @@ min-width: 0;
     font-size: 1em;
     color: #333;
     padding-bottom: 20px;
+ 
 }
 .rlm {
     display: flex;
     justify-content: space-between;
     margin: 15px;
     align-items: center;
+  
 }
 .rm p a {
     color: blue;
@@ -241,10 +259,20 @@ min-width: 0;
        .modalContent h1 {
   font-size: 1em;
        }
-        
-       
+        .title h3 {
+ font-size: 14px;
+ padding-bottom: 15px;
+        }  .post-image img {
+            width: 100%;
+        }
+        .navigation ul li a  {
+            font-size: 15px;
+        }
 }
-.PostWrapper {
+.post-image img {
+            width: 100%;
+        }
+.PostWrapper, .FeebackWrapper {
   position: fixed;
  display: none;
    justify-content: center;
@@ -253,7 +281,6 @@ min-width: 0;
    overflow: auto;
    inset: 0;
       -webkit-overflow-scrolling: touch;
-
 }
 .dark-mode .postModal {
     background-color: #1e1e1e;
@@ -308,7 +335,6 @@ textarea.input_field {
     min-height: 90px;
   resize: none;
 }
-
 .modalContent h1, .POst_title h2 {
     color: blue;
 }
@@ -333,8 +359,6 @@ textarea.input_field {
 .form_group .btn:active {
     transform: translateY(8px);
 }
-
 .cm i {
-    
   color: #7353AD;
 }

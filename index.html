@@ -1,10 +1,23 @@
+<!--Programmed by Solomon; all right reserved. @SoloVibe @copyright-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Blog By KingSOL @SoloVibe</title>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="description" content="Personal Blog By KingSOL @SoloVibe">
+<meta name="keywords" content="Personal Blog By KingSOL @SoloVibe">
+<link rel="shortcut icon" href="download (1).png" type="image/x-icon">
+<link rel="icon" href="download (1).png">
+<meta name="author" content="Solomon Towolawi">
+<link rel="apple-touch-icon" href="download (1).png">
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
 <body>
   <div class="login-container"  id="Login" >
@@ -12,20 +25,19 @@
           <img src="download (1).png" alt="logo" style="width: 100px;height: 100px;">
       <h1>SoloVibe Blog</h1>
     </div>
-   
-<form action="#" onsubmit="return loginUser()">
+<form action="#" onsubmit="return loginUser()" autocomplete="on" autocorrect="on">
     <div class="input_Section">
-    <input type="text" name="username" id="login_Username" class="input_field" required> 
+    <input type="text" name="username" id="login_Username" class="input_field" required autocomplete="username"> 
     <label for="username" class="label">Enter Your Username</label>
     <p class="error" id="username_error"></p>
     </div>
    <div class="input_Section">
-    <input type="password" name="password" id="Login_psw" class="input_field" required> 
+    <input type="password" name="password" id="Login_psw" class="input_field" required autocomplete="current-password"> 
     <label for="psw" class="label">Enter Your Password</label>
       <p class="error" id="psw_error"></p>
     </div>
     <div class="psw_check">
-          <input type="checkbox" name="" id="psw_check" onclick="showLogin_psw()">
+          <input type="checkbox" name="psw_check" id="psw_check" onclick="showLogin_psw()">
           <label for="psw_check">Show password</label>
     </div>
     <div class="buttom">
@@ -34,19 +46,14 @@
     <div class="forget_psw">
         <p><a href="Forgotten_psw.html">Forgotten Password?</a></p>
     </div>
-
-   
 </form>
- 
 <div class="createAccount">
         <div class="cont">
         <button class="create_btn" onclick="reg_page()">Create a new account</button>
-        <span>SoloVibe</span>
+         <span>Solo<span style="color: blue;font-size: 1em;text-transform: uppercase;">Vibe</span> </span>
         </div>
     </div>
-
     </div>
-    
   <script src="script.js"></script>
 </body>
 </html>
