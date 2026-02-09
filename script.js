@@ -394,4 +394,9 @@ function viewPost(PostId){
    },   30000  );
    document.getElementById('year').innerHTML = new Date().getFullYear();
     
-          
+           let protocol= document.location.protocol;
+            if(protocol === 'file:' || protocol === 'http:'  ) {
+             alert("try dey get sense; don't copy my code")
+          window.close()
+
+          }
