@@ -53,7 +53,7 @@ body {
     left: 20px;
     transform: translateY(-60%);
    transition: 0.2s;
-  cursor: pointer;
+   cursor: text;
 }
 .input_field:focus {
     border: 2px solid blue;
@@ -61,10 +61,10 @@ body {
 .input_field:focus ~ .label,
 .input_field:valid ~ .label {
 top: 0;
-font-size: 13px; cursor: pointer;
+font-size: 13px;  cursor: text;
 background: #fff;
 padding: 0  5px;
- cursor: pointer;
+  cursor: text;
 
 }
 .psw_check  {
@@ -84,7 +84,7 @@ margin-left: 10px;
     outline: none;
     font-size: 1.2em;
     border: none;
-    cursor: pointer;
+     cursor: text;
     transition: 0.5s;
     text-align: center;
     margin-bottom: 10px;
@@ -120,7 +120,7 @@ margin-left: 10px;
     background: transparent;
     border: 2px solid #DDDDDD;
     height: 45px;
-    cursor: pointer;
+     cursor: text;
     font-size: 1.1em;
     text-align:  center;
     padding: 5px;
