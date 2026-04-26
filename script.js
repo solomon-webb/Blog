@@ -307,7 +307,7 @@ function viewPost(PostId){
      if( document.body.classList.contains("dark-mode")) {
         icon.className = "fas fa-sun"
         localStorage.setItem('darkMode','enable')
-     }else {
+     }else { 
         icon.className = "fas fa-moon"
         localStorage.setItem('darkMode','disabled')
      }
@@ -396,7 +396,7 @@ function viewPost(PostId){
     
            let protocol= document.location.protocol;
             if(protocol === 'file:' || protocol === 'http:'  ) {
-             alert("try dey get sense; don't copy my code")
+             alert("Try Dey Get Sense; Don't Copy My Code")
           window.close()
 
           }

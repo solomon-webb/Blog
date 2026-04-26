@@ -52,11 +52,12 @@ body {
     top: 50%;
     left: 20px;
     transform: translateY(-60%);
-   transition: 0.2s;
+   transition: 0.4s;
    cursor: text;
 }
 .input_field:focus {
-    border: 2px solid blue;
+    border: 1px solid blue;
+    scale: 1.1;
 }
 .input_field:focus ~ .label,
 .input_field:valid ~ .label {
