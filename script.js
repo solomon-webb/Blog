@@ -1,5 +1,25 @@
 //Programmed by Solomon; all right reserved. @SoloVibe @copyright
 "use strict"
+function showToast(message, type = "info", duration = 3200) {
+    let container = document.getElementById("toastContainer");
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "toastContainer";
+        container.className = "toast-container";
+        container.setAttribute("aria-live", "polite");
+        document.body.appendChild(container);
+    }
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add("toast-visible"));
+    window.setTimeout(() => {
+        toast.classList.remove("toast-visible");
+        window.setTimeout(() => toast.remove(), 250);
+    }, duration);
+}
+
 function reg_page() {
        window.location.href = "register.html"
 }
@@ -32,8 +52,8 @@ function Register() {
     }
  const user = {username, mail, psw}
     localStorage.setItem(username, JSON.stringify(user))
-     alert(`Welcome ${username}! Registration successful! Please login.`);  
-    window.location.href = "index.html";
+    showToast(`Welcome ${username}! Your account is ready.`, "success");
+    window.setTimeout(() => window.location.href = "index.html", 1200);
 return false; 
 } 
 function loginUser() {
@@ -55,10 +75,10 @@ function loginUser() {
     }
       if(userData && userData.psw == psw) {
              localStorage.setItem('currentUser', username);
-             alert(`Login Successful!, welcome ${username}`);
-              window.location.href = "main.html";
+                         showToast(`Welcome back, ${username}.`, "success");
+                            window.setTimeout(() => window.location.href = "main.html", 900);
               }else {
-            alert("Invalid Credentials")
+                        showToast("Invalid username or password.", "error");
           }
         return false
 }
@@ -107,7 +127,7 @@ function checkPsw() {
 function copy() {
     if(! localStorage.getItem('currentUser')) {
        navigator.clipboard.writeText(result.textContent)
-       .then(()=> alert(`password copied`)) 
+    .then(()=> showToast("Password copied to clipboard.", "success"))
     }
 }
        
@@ -147,12 +167,12 @@ if(document.getElementById("ProfileNM")) {
  function closePostModal() {
     document.getElementById("PostWrapper").style.display = "none";
     document.getElementsByClassName('all')[0].style.filter = "none"
-    document.getElementById("form_group").reset()
+    document.getElementById("postForm").reset()
   }
   function ShowPost() {
     document.getElementById("PostWrapper").style.display = "flex";
     document.getElementsByClassName('all')[0].style.filter = "blur(5px)"
-     document.getElementById("form_group").reset()
+    document.getElementById("postForm").reset()
   }
   function AddPost() {
     let title = document.getElementById("postTitle").value.trim();
@@ -165,7 +185,7 @@ if(document.getElementById("ProfileNM")) {
     PostContError.textContent = "";
     let currentUser = localStorage.getItem('currentUser')
 if(!currentUser) {
-    alert('please login to create a post') 
+    showToast("Please log in to create a post.", "error");
     return  false
 }
     if(title.length < 5 ) {
@@ -207,7 +227,7 @@ function savePost(title,category,PostContent,currentUser,imageData) {
        let posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
        posts.unshift(post);
        localStorage.setItem('blogPosts', JSON.stringify(posts));
-        alert("Post published successfully!");
+        showToast("Post published successfully.", "success");
         closePostModal();
         DisplayPost()
 }
@@ -217,8 +237,7 @@ function DisplayPost() {
        let posts = JSON.parse(localStorage.getItem('blogPosts')) || []
        if(posts.length === 0) {
         PostCont.innerHTML = `<div class="post_card">
-                <div class="post-image" style="display: flex;justify-content: center;align-items: center;margin-bottom: 10px;"><img src="IMG-20251104-WA0004.jpg" alt="" style="border-radius: 15px;width: 200px;height: 200px;"></div> 
-        <div class="title">
+                   <div class="title">
                 <h3>Welcome to My Blog Posts</h3>
                <i class="fas fa-calendar" style="color: #7353AD;"><span id="MYOwnDate" style="padding-left: 15px; font-size: smaller;"></span></i>  
             </div>
@@ -276,7 +295,7 @@ function viewPost(PostId){
     if(post) {
         post.views++;
         localStorage.setItem('blogPosts', JSON.stringify(posts));
-        alert(`${post.title}\n\nBy ${post.author} on ${post.date}\n\nCategory: ${post.category}\n\n${post.content}`);
+        showToast(`${post.title}\nBy ${post.author} on ${post.date}\nCategory: ${post.category}\n\n${post.content}`, "info", 7000);
         DisplayPost();
     }
 }
@@ -393,10 +412,3 @@ function viewPost(PostId){
 
    },   30000  );
    document.getElementById('year').innerHTML = new Date().getFullYear();
-    
-           let protocol= document.location.protocol;
-            if(protocol === 'file:' || protocol === 'http:'  ) {
-             alert("Try Dey Get Sense; Don't Copy My Code")
-          window.close()
-
-          }

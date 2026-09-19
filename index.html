@@ -1,66 +1,96 @@
 <!--Programmed by Solomon; all right reserved. @SoloVibe @copyright-->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Blog By KingSOL @SoloVibe</title>
-<link rel="stylesheet" href="style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="description" content="Personal Blog By KingSOL @SoloVibe">
-<meta name="keywords" content="Personal Blog By KingSOL @SoloVibe">
-<link rel="icon" href="icon.png">
-<meta name="author" content="Solomon Towolawi">
-<link rel="apple-touch-icon" href="icon.png">
-<!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>
-<body>
-  <div class="login-container"  id="Login" >
-    <div class="logo">
-          <img src="icon.png" alt="logo" style="width: 100px;height: 100px;">
-      <h1>SoloVibe Blog</h1>
-    </div>
-<form action="#" onsubmit="return loginUser()" autocomplete="on" autocorrect="on">
-    <div class="input_Section">
-    <input type="text" name="username" id="login_Username" class="input_field" required autocomplete="username"> 
-    <label for="login_Username" class="label">Enter Your Username</label>
-    <p class="error" id="username_error"></p>
-    </div>
-   <div class="input_Section">
-    <input type="password" name="password" id="Login_psw" class="input_field" required autocomplete="current-password"> 
-    <label for="Login_psw" class="label">Enter Your Password</label>
-      <p class="error" id="psw_error"></p>
-    </div>
-    <div class="psw_check">
-          <input type="checkbox" name="psw_check" id="psw_check" onclick="showLogin_psw()">
-          <label for="psw_check">Show password</label>
-    </div>
-    <div class="buttom">
-        <input type="submit" value="Login" class="btn">
-    </div>
-    <div class="forget_psw">
-        <p><a href="Forgotten_psw.html">Forgotten Password?</a></p>
-    </div>
-</form>
-<div class="createAccount">
-        <div class="cont">
-        <button class="create_btn" onclick="reg_page()">Create a new account</button>
-         <span>Solo<span style="color: blue;font-size: 1em;text-transform: uppercase;">Vibe</span> </span>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <meta name="description" content="Personal Blog By KingSOL @SoloVibe" />
+    <meta name="keywords" content="Personal Blog By KingSOL @SoloVibe" />
+    <link rel="icon" href="asset/icon.png" />
+    <meta name="author" content="Solomon Towolawi" />
+    <link rel="apple-touch-icon" href="asset/icon.png" />
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="login-container" id="Login">
+      <div class="logo">
+        <img
+          src="asset/icon.png"
+          alt="logo"
+          style="width: 100px; height: 100px"
+        />
+        <h1>SoloVibe Blog</h1>
+      </div>
+      <form
+        action="#"
+        onsubmit="return loginUser();"
+        autocomplete="on"
+        autocorrect="on"
+      >
+        <div class="input_Section">
+          <input
+            type="text"
+            name="username"
+            id="login_Username"
+            class="input_field"
+            required
+            autocomplete="username"
+          />
+          <label for="login_Username" class="label">Enter Your Username</label>
+          <p class="error" id="username_error"></p>
         </div>
+        <div class="input_Section">
+          <input
+            type="password"
+            name="password"
+            id="Login_psw"
+            class="input_field"
+            required
+            autocomplete="current-password"
+          />
+          <label for="Login_psw" class="label">Enter Your Password</label>
+          <p class="error" id="psw_error"></p>
+        </div>
+        <div class="psw_check">
+          <input
+            type="checkbox"
+            name="psw_check"
+            id="psw_check"
+            onclick="showLogin_psw()"
+          />
+          <label for="psw_check">Show password</label>
+        </div>
+        <div class="buttom">
+          <input type="submit" value="Login" class="btn" />
+        </div>
+        <div class="forget_psw">
+          <p><a href="Forgotten_psw.html">Forgotten Password?</a></p>
+        </div>
+      </form>
+      <div class="createAccount">
+        <div class="cont">
+          <button class="create_btn" onclick="reg_page()">
+            Create a new account
+          </button>
+          <span
+            >Solo<span
+              style="color: blue; font-size: 1em; text-transform: uppercase"
+              >Vibe</span
+            >
+          </span>
+        </div>
+      </div>
     </div>
-    </div>
-  <script src="script.js"></script>
-  <script>
-   let proto = document.location.protocol;
-            if(proto === 'file:' || proto === 'http:'  ) {
-             alert("try dey get sense; don't copy my code")
-          window.close()
-
-          }
-  </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

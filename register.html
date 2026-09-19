@@ -1,69 +1,84 @@
-<!--Programmed by Solomon; all right reserved. @SoloVibe @copyright-->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Blog By KingSOL @SoloVibe</title>
-   <link rel="stylesheet" href="style.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="description" content="Personal Blog By KingSOL @SoloVibe">
-<meta name="keywords" content="Personal Blog By KingSOL @SoloVibe">
- 
-<link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
-<meta name="author" content="Solomon Towolawi">
-<!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>
-<body>
-     <!--REgister-->
-    <div class="Reg-container" id="Register">
-    <div class="logo">
-          <img src="icon.png" alt="logo" style="width: 100px;height: 100px;">
-      <h1>Welcome to SoloVibe Blog</h1>
-    </div>
-<form action="" onsubmit="return Register()" autocomplete="on">
-    <div class="input_Section">
-    <input type="text" name="username" id="Reg_username" class="input_field" required autocomplete="username"> 
-    <label for="Reg_username" class="label">Enter Your Username</label>
-    <p class="error" id="Reg_username_Error"></p>
-    </div>
-    <div class="input_Section">
-    <input type="text" name="mail" id="Reg_mail" class="input_field" required autocomplete="email"> 
-    <label for="Reg_mail" class="label">Enter Your Email</label>
-     <p class="error" id="Reg_mail_error"></p>
-    </div>
-   <div class="input_Section">
-    <input type="password" name="password" id="Reg_psw" class="input_field" required    autocomplete="new-password"> 
-    <label for="Reg_psw" class="label">Enter Your Password</label>
-     <p class="error" id="Reg_psw_error"></p>
-    </div>
-     <div class="psw_check">
-          <input type="checkbox" name="" id="psw_check" onclick="showReg_psw()">
-          <label for="psw_check">Show password</label>
-    </div>
-    <div class="buttom"></div>
-        <input type="submit" value="Register" class="btn">
-    </div>
-</form>
-<div class="createAccount">
-        <div class="cont">
-        <button class="create_btn" onclick="login_page()">Login</button>
-        <span>Solo<span style="color: blue;font-size: 1em;text-transform: uppercase;">Vibe</span> </span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create account | SoloVibe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="asset/icon.png" />
+    <meta name="description" content="Create a SoloVibe blog account." />
+  </head>
+  <body>
+    <div class="login-container Reg-container" id="Register">
+      <div class="logo">
+        <img
+          src="asset/icon.png"
+          alt="SoloVibe logo"
+          style="width: 100px; height: 100px"
+        />
+        <h1>Join SoloVibe</h1>
+      </div>
+      <form action="#" onsubmit="return Register();" autocomplete="on">
+        <div class="input_Section">
+          <input
+            type="text"
+            name="username"
+            id="Reg_username"
+            class="input_field"
+            required
+            autocomplete="username"
+          />
+          <label for="Reg_username" class="label">Choose a username</label>
+          <p class="error" id="Reg_username_Error"></p>
         </div>
-    </div>
+        <div class="input_Section">
+          <input
+            type="email"
+            name="mail"
+            id="Reg_mail"
+            class="input_field"
+            required
+            autocomplete="email"
+          />
+          <label for="Reg_mail" class="label">Enter your email</label>
+          <p class="error" id="Reg_mail_error"></p>
+        </div>
+        <div class="input_Section">
+          <input
+            type="password"
+            name="password"
+            id="Reg_psw"
+            class="input_field"
+            required
+            autocomplete="new-password"
+          />
+          <label for="Reg_psw" class="label">Create a password</label>
+          <p class="error" id="Reg_psw_error"></p>
+        </div>
+        <div class="psw_check">
+          <input type="checkbox" id="reg_psw_check" onclick="showReg_psw()" />
+          <label for="reg_psw_check">Show password</label>
+        </div>
+        <div class="buttom">
+          <input type="submit" value="Create account" class="btn" />
+        </div>
+      </form>
+      <div class="createAccount">
+        <div class="cont">
+          <button class="create_btn" onclick="login_page()">
+            Already have an account? Sign in
+          </button>
+        
+          
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-    <script>
-      let proto = document.location.protocol;
-             if(proto === 'file:' || proto === 'http:'  ) {
-                alert("try dey get sense; don't copy my code")
-              window.close()
-
-          }
-    </script>
-</body>
+  </body>
 </html>

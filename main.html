@@ -12,8 +12,8 @@
 <meta name="description" content="Personal Blog By KingSOL @SoloVibe">
 <meta name="keywords" content="Personal Blog By KingSOL @SoloVibe">
  
-<link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="asset/icon.png">
+  <link rel="apple-touch-icon" href="asset/icon.png">
 <meta name="author" content="Solomon Towolawi">
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -35,20 +35,19 @@
          <div class="POst_title" style="text-align: center;">
             <h2>SoloVibe</h2>
          </div>
-         <form action="" id="form_group" >
+         <form action="" id="contactForm" >
               <div class="form_group">
             <label for="postTitle"  class="label">FullName: Solomon Towolawi</label>
               </div>
             <div class="form_group">
-                <label for="POstContent" class="label">Age: 16 to be</label>
+                <label for="POstContent" class="label">Github: <a href="https://github.com/solomon-webb" target="_blank">solomon-webb</a></label>
             </div>
             <div class="form_group">
                 <label for="POstContent" class="label">Role: Developer</label>
              
             </div>
-          <div class="form_group" style="display: flex;justify-content: center;align-items: center;">
-              <img src="InShot_20251119_162149511.jpg" alt="" style="width: 300px;height: 300px;border-radius: 20px;">
-             
+            <div class="form_group">
+                <label for="POstContent" class="label">Email: towolawisolomon0@gmail.com</label>
             </div>
             <div class="form_group">
                 <input type="submit" value="Contact Me" class="btn" onclick="Contact()">
@@ -90,7 +89,7 @@
          <div class="POst_title" style="text-align: center;">
             <h2>SoloVibe</h2>
          </div>
-         <form action="" id="form_group" onsubmit="return AddPost()" >
+         <form action="" id="postForm" onsubmit="return AddPost()" >
             <div class="form_group">
             <label for="postTitle"  class="label">Post Title</label>
             <input type="text" name="" id="postTitle" placeholder="Enter post title" required class="input_field">
@@ -115,7 +114,7 @@
             </div>
             <div class="form_group">
                 <label for="postImage">Post Image:</label>
-                <input type="file" name="" id="postImage" accept="image/*" onchange="Preview()" required>
+                <input type="file" name="" id="postImage" accept="image/*" onchange="Preview()">
                 <div class="imagePreview"  style="display: flex;justify-content: center;align-items: center;" >
                     <img src="" alt="" id="imagePreview" style="max-width: 110px;max-height: 110px; margin-top: 5px;border-radius: 10px;object-fit: cover;display: block;">
                 </div>
@@ -157,26 +156,22 @@
             <h2>Navigation</h2>
         </div>
         <ul style="text-transform: capitalize;">
-           <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li onclick="ShowPost()"><a href="#"><i class="fas fa-edit"></i> Write Post</a></li>
-                     <li onclick="ShowFeeback()"><a href="#"><i class="fas fa-bookmark"></i> feedback</a></li>
-                                         <li onclick="LogOUT()" id="showlogOUt" style="display: none;"><a href="#"><i class="fas fa-bookmark"></i> logout</a></li>
-  <li onclick="ShowContact()" id="ShowContact"><a href="#"><i class="fas fa-bookmark"></i> Contact</a></li>
- <li onclick="alert('Pending');return false"><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+           <li><a href="#" title="Home"><i class="fas fa-house"></i> Home</a></li>
+                    <li onclick="ShowPost()"><a href="#" title="Write a post"><i class="fas fa-pen-to-square"></i> Write Post</a></li>
+                     <li onclick="ShowFeeback()"><a href="#" title="Send feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+                                         <li onclick="LogOUT()" id="showlogOUt" style="display: none;"><a href="#" title="Log out"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a></li>
+  <li onclick="ShowContact()" id="ShowContact"><a href="#" title="Contact the developer"><i class="fas fa-address-card"></i> Contact</a></li>
+ <li onclick="showToast('Settings are coming soon.', 'info');return false"><a href="#" title="Settings"><i class="fas fa-sliders"></i> Settings</a></li>
 
                </ul>
        </div>
     </div>
      <div class="mainpost">
-        <div class="title">
-                <h3>My Blog Posts</h3>
-                <button onclick="ShowPost()"> <span>+</span>New Post</button>
-        </div>
-      
+        
   </div>
     <div class="wrapper"  id="postsContainer">
            <div class="post_card">
-                <div class="post-image" style="display: flex;justify-content: center;align-items: center;margin-bottom: 10px;"><img src="IMG-20251104-WA0004.jpg" alt="" style="border-radius: 15px;width: 200px;height: 200px;"></div> 
+                <div class="post-image" style="display: flex;justify-content: center;align-items: center;margin-bottom: 10px;"><img src="asset/icon.png" alt="Welcome to SoloVibe" style="border-radius: 15px;width: 200px;height: 200px;"></div> 
         <div class="title">
                 <h3>Welcome to My Blog Posts</h3>
                <i class="fas fa-calendar" style="color: #7353AD;"><span id="MYOwnDate" style="padding-left: 15px; font-size: smaller;"></span></i>  
@@ -200,14 +195,6 @@
     <p style="text-align: center;font-size: smaller;">© copyright <span id="year"></span> SoloVibe, All rights reserved. Created By  SOLOMON   </p></p>
 </div>
   <script src="script.js">
-  </script>
-  <script>
-    let proto = document.location.protocol;
-             if(proto === 'file:' || proto === 'http:'  ) {
-                alert("try dey get sense; don't copy my code")
-              window.close()
-
-          }
   </script>
 </body>
 </html>
